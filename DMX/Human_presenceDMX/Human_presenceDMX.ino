@@ -35,10 +35,10 @@
    for the SSID and password of the network to which you plan to connect, as follows:
    #define SECRET_SSID "ssid"  // fill in your value
    #define SECRET_PASS "password" // fill in your value
-   #define SECRET_SACN_RECV "192.168.0.14"  // your sACM receiver's IP address
+   #define SECRET_SACN_RECV "XX.XX.XX.XX"  // your sACM receiver's IP address
    // Unique ID of your SACN source. You can generate one from https://uuidgenerator.net
    // or on the command line by typing uuidgen
-   #define SECRET_SACN_UUID "CBC0C271-8022-4032-BC6A-69F614C62816"
+   #define SECRET_SACN_UUID "XxxxxxxxxxxxxXxxxxxxxXXXxxxxxxX"
 
    created 17 Jan 2018
    updated 2 Apr 2020
