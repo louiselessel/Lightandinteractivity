@@ -80,9 +80,38 @@ void setup() {
 
 void loop() {
 
+  
+
+  // Lights list
+  // 10 is top rack strip
+  // 3 is front right - use this
+  // 16 is front light - use this also?
+
+  
+  // 17 is hitting the tube - this could be used to fake more lighting from the  top rack
+  // 18 is top right
+  // 21 is back light right (visible)
+  // 22 is back light left
+
+  
+  // see if we can use alert command?
+
+
+  // PLAN FOR SCENE
+  // blink strip sporadically for 5 seconds
+  
+  
+  // turn on light on face
+
+
+  // turn off light on face
+
+
+ 
   // package to 2 part json
   int hueColor = random(0, 65535); // give random color
   packageRequest("hue", String(hueColor));
+  
   packageRequest("on", "true");   // turn light on
 
   // send request to hue
@@ -93,6 +122,7 @@ void loop() {
   packageRequest("on", "false");   // turn light off
   sendRequest(10, phueCmd);
   delay(4000);
+  
 }
 
 
@@ -100,7 +130,7 @@ void packageRequest(String cmd, String value) {
   // if this is the first call
   if (multipleItems < 1) {
     // make a string for the JSON command:
-    phueCmd = "\"" + cmd;
+    phueCmd = "\"" + cmd;           // the string gets deleted here (there is a =, not +=)
     phueCmd += "\":";
     phueCmd += value;
   } else {
@@ -153,6 +183,6 @@ void sendRequest(int light, String packagedRequest) {
   Serial.println(response);
   Serial.println();
 
-  // reset variables
+  // reset variables, when this is 0 the packages string gets deleted
   multipleItems = 0;
 }
